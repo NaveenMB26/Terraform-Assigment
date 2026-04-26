@@ -1,0 +1,19 @@
+aws_region            = "us-east-1"
+environment           = "dev"
+instance_count        = 1
+instance_type         = "t3.micro"
+vpc_id                = "vpc-02aae5bfb4367dd14"                                  # Your default VPC
+subnet_ids            = ["subnet-03bacf1492911db46", "subnet-0b8f9d2bc7ffef2b4"] # Dev subnets
+key_pair_name         = "New-account"                                            # Your SSH key pair
+associate_public_ip   = true
+ssh_cidr_blocks       = ["49.37.163.143/32"] # Your public IP
+http_cidr_blocks      = ["0.0.0.0/0"]
+root_volume_type      = "gp3"
+root_volume_size      = 20
+enable_ebs_encryption = true
+enable_monitoring     = true
+common_tags = {
+  Project     = "TerraformEC2"
+  Environment = "dev"
+  Terraform   = "true"
+}
